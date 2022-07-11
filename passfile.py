@@ -44,6 +44,7 @@ def ask_preff():
     print("\tlen X -> X numbers of password will be created")
     print("\t/rm/ -> terminate last preffed value")
     print("\t/rmcmd/ -> terminate last command")
+    print("\t/ls/ -> print your current status")
     print("ANY VALUE GIVEN LIKE / X / -> X WILL BE CONSIDERED A PREFFERED VALUE")
     print("\t**note** spacing between two word will be considered as seperate preffered value's")
     while True:
@@ -52,7 +53,7 @@ def ask_preff():
         match y:
             case ["/"]:
                 break
-            case ["/",x,"/"]:
+            case ["/",x]:
                 n_cmd.append([x])    
             case ["/rm/"]:
                 n_cmd.pop()
@@ -60,7 +61,7 @@ def ask_preff():
                 cmd.pop()    
             case ["len",x] if x.isdigit():
                 z=x
-            case ["ls"]:
+            case ["/ls/"]:
                 print("n_cmd's: ",n_cmd)
                 print("cmd's: ",cmd)
                 print("length: ",z)
@@ -74,6 +75,7 @@ def ask_preff():
                 print("\tlen X -> X numbers of password will be created")
                 print("\t/rm/ -> terminate last preffed value")
                 print("\t/rmcmd/ -> terminate last command")
+                print("\t/ls/ -> print your current status")
                 print("ANY VALUE GIVEN LIKE / X / -> X WILL BE CONSIDERED A PREFFERED VALUE")
                 print("\t**note** spacing between two word will be considered as seperate preffered value's")
             case ["num"]:
